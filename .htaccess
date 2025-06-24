@@ -1,0 +1,9 @@
+RewriteEngine On
+
+# Redirigir todas las rutas al index.php excepto archivos y directorios existentes
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteRule ^(.*)$ index.php [QSA,L]
+
+# Opcional: Redirigir la raíz del directorio al login
+DirectoryIndex index.php
