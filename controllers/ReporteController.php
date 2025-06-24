@@ -1,4 +1,9 @@
 <?php
+require_once 'config/Database.php';
+require_once 'models/Usuario.php';
+require_once 'models/Producto.php';
+require_once 'controllers/AuthController.php';
+
 class ReporteController {
     
     public function index() {
@@ -30,6 +35,31 @@ class ReporteController {
         ];
         
         include 'views/reportes/index.php';
+    }
+    
+    public function graficos() {
+        $auth = new AuthController();
+        $auth->checkAuth();
+        
+        // Obtener datos para reportes
+        $usuarioModel = new Usuario();
+        $productoModel = new Producto();
+        
+        $totalUsuarios = $usuarioModel->count();
+        $totalProductos = $productoModel->count();
+        $valorTotal = $productoModel->getTotalValue();
+        $precioPromedio = $productoModel->getAvgPrice();
+        
+        $reportData = [
+            'resumen' => [
+                'usuarios' => $totalUsuarios,
+                'productos' => $totalProductos,
+                'valor_total' => $valorTotal,
+                'precio_promedio' => $precioPromedio
+            ]
+        ];
+        
+        include 'views/reportes/graficos.php';
     }
 }
 ?>

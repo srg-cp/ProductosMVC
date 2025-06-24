@@ -183,6 +183,19 @@ ob_start();
     </div>
 </div>
 
+<div class="card">
+    <div class="btn-group">
+        <a href="/mvcwebi/reportes" class="btn btn-primary">
+            <span class="material-icons">table_view</span>
+            Vista de Tablas
+        </a>
+        <a href="/mvcwebi/reportes/graficos" class="btn btn-outlined">
+            <span class="material-icons">bar_chart</span>
+            Vista de Gráficos
+        </a>
+    </div>
+</div>
+
 <script>
 function exportToCSV(type) {
     let csvContent = "";

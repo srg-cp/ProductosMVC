@@ -103,6 +103,26 @@ switch ($path) {
         $controller->index();
         break;
     
+    case '/reportes/graficos':
+        $controller = new ReporteController();
+        $controller->graficos();
+        break;
+    
+    case '/graficos/barraProductos':
+        $controller = new GraficoController();
+        $controller->barraProductos();
+        break;
+    
+    case '/graficos/pieEstadisticas':
+        $controller = new GraficoController();
+        $controller->pieEstadisticas();
+        break;
+    
+    case '/graficos/lineaTendencia':
+        $controller = new GraficoController();
+        $controller->lineaTendencia();
+        break;
+    
     default:
         header("HTTP/1.0 404 Not Found");
         echo "Página no encontrada";
