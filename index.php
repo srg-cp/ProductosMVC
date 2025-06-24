@@ -123,6 +123,26 @@ switch ($path) {
         $controller->lineaTendencia();
         break;
     
+    case '/reportes/pdfResumen':
+        $controller = new ReporteController();
+        $controller->pdfResumen();
+        break;
+        
+    case '/reportes/pdfUsuarios':
+        $controller = new ReporteController();
+        $controller->pdfUsuarios();
+        break;
+        
+    case '/reportes/pdfProductos':
+        $controller = new ReporteController();
+        $controller->pdfProductos();
+        break;
+        
+    case '/reportes/pdfGraficos':
+        $controller = new ReporteController();
+        $controller->pdfGraficos();
+        break;
+    
     default:
         header("HTTP/1.0 404 Not Found");
         echo "Página no encontrada";

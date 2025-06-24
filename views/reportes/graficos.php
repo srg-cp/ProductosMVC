@@ -96,38 +96,54 @@ ob_start();
     </div>
 </div>
 
-<!-- Acciones de Reporte -->
 <div class="card">
     <h2 class="card-title">
         <span class="material-icons" style="vertical-align: middle; margin-right: 8px;">file_download</span>
-        Exportar Reportes
+        Descargar Reportes PDF
     </h2>
     
-    <p style="color: var(--md-sys-color-on-surface-variant); margin-bottom: 24px;">
-        Descarga los reportes y gráficos para análisis externos.
-    </p>
-    
     <div class="btn-group">
-        <button class="btn btn-primary" onclick="window.print()">
-            <span class="material-icons">print</span>
-            Imprimir Reporte
-        </button>
-        
-        <button class="btn btn-outlined" onclick="descargarGrafico('barraProductos')">
-            <span class="material-icons">download</span>
-            Descargar Gráfico de Barras
-        </button>
-        
-        <button class="btn btn-outlined" onclick="descargarGrafico('pieEstadisticas')">
-            <span class="material-icons">download</span>
-            Descargar Gráfico Circular
-        </button>
-        
-        <button class="btn btn-outlined" onclick="descargarGrafico('lineaTendencia')">
-            <span class="material-icons">download</span>
-            Descargar Gráfico de Líneas
-        </button>
+        <a href="/mvcwebi/reportes/pdfResumen" class="btn btn-primary" target="_blank">
+            <span class="material-icons">summarize</span>
+            Resumen Ejecutivo
+        </a>
+        <a href="/mvcwebi/reportes/pdfUsuarios" class="btn btn-outlined" target="_blank">
+            <span class="material-icons">people</span>
+            Reporte de Usuarios
+        </a>
+        <a href="/mvcwebi/reportes/pdfGraficos" class="btn btn-secondary" target="_blank">
+            <span class="material-icons">analytics</span>
+            Análisis Completo
+        </a>
     </div>
+    
+    <div style="margin-top: 16px; padding: 16px; background-color: var(--md-sys-color-surface-container-high); border-radius: 12px; color: var(--md-sys-color-on-surface-variant); font-size: 14px;">
+        <span class="material-icons" style="vertical-align: middle; margin-right: 8px; font-size: 16px;">info</span>
+        <strong>Información:</strong> Los reportes PDF se generan automáticamente con los datos actuales del sistema y se descargan directamente a tu dispositivo.
+    </div>
+</div>
+
+<div class="btn-group">
+    <button class="btn btn-primary" onclick="window.print()">
+        <span class="material-icons">print</span>
+        Imprimir Reporte
+    </button>
+    
+    <button class="btn btn-outlined" onclick="descargarGrafico('barraProductos')">
+        <span class="material-icons">download</span>
+        Descargar Gráfico de Barras
+    </button>
+    
+    <button class="btn btn-outlined" onclick="descargarGrafico('pieEstadisticas')">
+        <span class="material-icons">download</span>
+        Descargar Gráfico Circular
+    </button>
+    
+    <button class="btn btn-outlined" onclick="descargarGrafico('lineaTendencia')">
+        <span class="material-icons">download</span>
+        Descargar Gráfico de Líneas
+    </button>
+</div>
 </div>
 
 <style>
